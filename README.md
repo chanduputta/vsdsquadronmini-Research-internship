@@ -23,10 +23,10 @@ We have to follow the given steps to compile any **.c** file in our machine:
 3. To the C code on your terminal, run the following command:
 
 	```
-	gcc sum1ton.c -o sum1ton.o
-	./sum1ton.o
+	gcc sum1ton.c
+	./a.out
 	```
-![C Code compiled on gcc Compiler](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task1/C%20code%20compiled%20on%20gcc%20.png?raw=true)
+![C Code compiled on gcc Compiler](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task1/C%20code%20compiled%20on%20gcc.png)
 
 ### RISCV based LAB
 We have to do the same compilation of our code but this time using RISCV gcc compiler. Follow the given steps:  
@@ -43,7 +43,7 @@ We have to do the same compilation of our code but this time using RISCV gcc com
 	riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum_1ton.o sum_1ton.c
 	```
  
-![C Code compiles on RISC V Compiler](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task1/C%20code%20compiled%20on%20RISCV%20compiler.png?raw=true)
+![C Code compiles on RISC V Compiler](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task1/C%20code%20compiled%20on%20RISC%20V%20compiler.png)
 
 3. Open a new terminal and run the given command:    
 
