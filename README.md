@@ -62,3 +62,56 @@ We have to do the same compilation of our code but this time using RISCV gcc com
 * **-O1:** This options is an optimization level that tells the compiler to optimize the generated code but without greatly increasing compilation time. -O1 aims to reduce code size and execution time while keeping the compilation process relatively quick.  
 
 </details>
+
+-------------------------------------------------
+
+<details>
+<summary><b>Task2:</b> Performing SPIKE Simulation and Debugging the C code with Interactive Debugging Mode using Spike</summary> 
+  
+### What is SPIKE in RISCV?
+> * A RISC-V ISA is a simulator, enabling the testing and analysis of RISC-V programs without the need for actual hardware.  
+> * Spike is a free, open-source C++ simulator for the RISC-V ISA that models a RISC-V core and cache system. It can be used to run programs and a Linux kernel, and can be a starting point for running software on a RISC-V target.  
+  
+### What is pk (Proxy Kernel)?  
+> * The RISC-V Proxy Kernel, pk , is a lightweight application execution environment that can host statically-linked RISC-V ELF binaries.  
+> * A Proxy Kernel in the RISC-V ecosystem simplifies the interaction between complex hardware and the software running on it, making it easier to manage, test, and develop software and hardware projects.  
+ 
+
+### Testing the SPIKE Simulator  
+The target is to run the ```findPrime.c``` code using both ```gcc compiler``` and ```riscv compiler```, and both of the compiler must display the same output on the terminal. So to compile the code using **gcc compiler**, use the following command:  
+```
+gcc findPrime.c  
+./a.out
+```
+And to compile the code using **riscv compiler**, use the following command:  
+```
+spike pk findPrime.o
+```  
+![Spike Simulation](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task2/spike%20pk%20Simulation.png)
+
+#### Following are the snapshots of RISCV Objdump with **-O1** and **-Ofast** options  
+RISCV Objdump with -O1 option  
+
+![Objdump in -O1](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task2/Objdump%20in%20-O1.png)
+
+RISCV Objdump with -Ofast option  
+
+![Objdump in -Ofast](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task2/Objdump%20in%20-Ofast.png)
+
+### Debugging the Assembly Language Program of  ```findPrime.c```  
+* Open the **Objdump** of code by using the following command  
+```
+$ riscv64-unknown-elf-objdump -d findPrime.o | less  
+```
+* Open the debugger in another terminal by using the following command  
+```
+$ spike -d pk findPrime.o
+```
+* The debugger will be opened in the terminal. Now, debugging operations can be performed as shown in the following snapshot.
+
+![Debugging](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task2/Spike%20Debugging.png) 
+
+</details>
+
+----------------------------------------
+
