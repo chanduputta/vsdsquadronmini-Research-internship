@@ -66,7 +66,7 @@ We have to do the same compilation of our code but this time using RISCV gcc com
 -------------------------------------------------
 
 <details>
-<summary><b>Task2:</b> Performing SPIKE Simulation and Debugging the C code with Interactive Debugging Mode using Spike</summary> 
+<summary><b>Task2:</b> Performing SPIKE Simulation and Debugging a simple C code with Interactive Debugging Mode using Spike</summary> 
   
 ### What is SPIKE in RISCV?
 > * A RISC-V ISA is a simulator, enabling the testing and analysis of RISC-V programs without the need for actual hardware.  
