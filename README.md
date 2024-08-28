@@ -23,10 +23,10 @@ We have to follow the given steps to compile any **.c** file in our machine:
 3. To the C code on your terminal, run the following command:
 
 	```
-	gcc sum1ton.c -o sum1ton.o
-	./sum1ton.o
+	gcc sum1ton.c
+	./a.out
 	```
-![C Code compiled on gcc Compiler](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task1/C%20code%20compiled%20on%20gcc%20.png?raw=true)
+![C Code compiled on gcc Compiler](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task1/C%20code%20compiled%20on%20gcc.png)
 
 ### RISCV based LAB
 We have to do the same compilation of our code but this time using RISCV gcc compiler. Follow the given steps:  
@@ -43,7 +43,7 @@ We have to do the same compilation of our code but this time using RISCV gcc com
 	riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum_1ton.o sum_1ton.c
 	```
  
-![C Code compiles on RISC V Compiler](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task1/C%20code%20compiled%20on%20RISCV%20compiler.png?raw=true)
+![C Code compiles on RISC V Compiler](https://github.com/chanduputta/vsdsquadronmini-Research-internship/blob/main/Task1/C%20code%20compiled%20on%20RISC%20V%20compiler.png)
 
 3. Open a new terminal and run the given command:    
 
@@ -57,7 +57,8 @@ We have to do the same compilation of our code but this time using RISCV gcc com
 ### *Descriptions of the keyword used in above command*  
 * **-mabi=lp64:** This option specifies the ABI (Application Binary Interface) to use ```lp64```, which is for 64-bit integer, long and pointer size. This ABI is used for 64-bit RISCV architecture.  
 * **-march=rv64i:** This option specifies the architecture that we use, which is rv64i, indicates the 64-bit RISCV base integer instruction set. This also confirms the targeting of 64-bit architecture.  
-* **riscv-objdump:** A tool for disassembling RISC-V binaries, providing insights into the code structure and helping in debugging.  
+* **riscv-objdump:** A tool for disassembling RISC-V binaries, providing insights into the code structure and helping in debugging.
+* **-Ofast:** The option -Ofast in the command ```riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c``` is a compiler optimization flag used with the GNU Compiler Collection (GCC). This flag is used to instruct the compiler to optimize the generated code for maximum speed. The use of ```-Ofast``` is typically chosen for applications where execution speed is critical and where deviations from standard behavior are acceptable. However, it's important to test thoroughly, as this level of optimization can introduce subtle bugs, especially in complex calculations or when strict compliance with external standards is required.  
 * **-O1:** This options is an optimization level that tells the compiler to optimize the generated code but without greatly increasing compilation time. -O1 aims to reduce code size and execution time while keeping the compilation process relatively quick.  
 
 </details>
